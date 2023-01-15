@@ -18,6 +18,8 @@ Experimental PlayStation 1 emulator written in C++.
 ## Latest Changes
 > 15th January 2023
 
+No changes have been made.
+
 ## Previous Changes
 > 15th January 2023
 
