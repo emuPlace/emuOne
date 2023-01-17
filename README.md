@@ -16,9 +16,11 @@ Experimental PlayStation 1 emulator written in C++.
 </span>
 
 ## Latest Changes
-> 15th January 2023
+> 17th January 2023
 
-No changes have been made.
+- Added CPU, COP0 and GTE.
+  - Code is ugly imo and will be improved.
+- Added all no$ documented opcodes for CPU and GTE.
 
 ## Previous Changes
 > 15th January 2023
