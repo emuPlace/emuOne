@@ -2,15 +2,57 @@
 
 #include <cpu/cpu.h>
 
+#include <glm/mat3x3.hpp>
+
 class GTE {
 public:
+	union RGBC {
+		struct {
+			u8 r, g, b, c;
+		};
+	};
+
+	union VECTOR2S16 {
+		struct {
+			s16 x, y;
+		};
+
+		glm::i16vec2 vector;
+	};
+
+	union VECTOR3S16 {
+		struct {
+			s16 x, y, z;
+		};
+
+		glm::i16vec3 vector;
+	};
+
 	GTE(CPU* cpu);
 	~GTE() = default;
 
-	std::unordered_map<u32, Function> opcodes;
+
+	// MARK: Properties
+	std::unordered_map<u32, FUNCTION> opcodes;
 
 	CPU* cpu;
 
+
+	// MARK: GTE Data Registers
+	VECTOR3S16 vxy0, vz0;
+	VECTOR3S16 vxy1, vz1;
+	VECTOR3S16 vxy2, vz2;
+	RGBC rgbc;
+	u16 otz;
+	s16 ir0, ir1, ir2, ir3;
+	VECTOR2S16 sxy0, sxy1, sxy2;
+	u16 sz0, sz1, sz2, sz3;
+	RGBC rgb0, rgb1, rgb2;
+	// res1 - prohibited (u8 res);
+
+
+
+	// MARK: Functions
 	void register_opcodes();
 
 	void op_rtps();

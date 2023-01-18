@@ -18,7 +18,7 @@ public:
 	u32 pc;
 	u32 hi; u32 lo;
 
-	std::unordered_map<u32, Function> primary, secondary;
+	std::unordered_map<u32, FUNCTION> primary, secondary;
 
 	COP0 cop0;
 	GTE* gte;
